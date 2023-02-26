@@ -12,8 +12,8 @@ app = Flask(__name__)
 
 @app.get('/')
 def index():
-    calendar_id = '3e9ee0552d3eaa809af571c2c4f90705692c803cd938821238353e43a53fe6cb@group.calendar.google.com'
-    tinkoff_list = requests.get('https://tinkoff-backend.prod.watchers.io/room/premade')
+    calendar_id = os.environ.get('CALENDAR_ID')
+    tinkoff_list = requests.get(os.environ.get('TINKOFF_API'))
     # tinkoff_list = requests.get('http://127.0.0.1:5000/events')
     google_list = get_events(calendar_id=calendar_id)
 
