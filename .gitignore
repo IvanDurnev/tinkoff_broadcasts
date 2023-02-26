@@ -1,6 +1,7 @@
+.env
+.gitignore
 test
 venv
 credentials
 .idea/
 __pycache__/
-*.env
